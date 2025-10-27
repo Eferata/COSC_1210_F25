@@ -109,3 +109,8 @@ def draw_player(screen, x, y):
     else:
         pygame.draw.circle(screen, config.PLAYER_COLOR, (int(x), int(y)), config.PLAYER_RADIUS)
         pygame.draw.circle(screen, (0, 0, 0), (int(x), int(y)), config.PLAYER_RADIUS, 2)
+def show_game_over(screen):
+    """Draw a Game Over box in the center of the screen."""
+    font = pygame.font.Font(None, 72)  # default font, large size
+    text = font.render("GAME OVER", True, (255, 255, 255))
+    text_rect = text.get_rect(center=(config.WIDTH // 2, config.HEIGHT // 2))
